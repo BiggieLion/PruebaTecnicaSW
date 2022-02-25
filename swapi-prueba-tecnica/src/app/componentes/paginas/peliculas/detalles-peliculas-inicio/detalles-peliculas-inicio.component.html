@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let pelicula of peliculasInicio">
+        prueba
+        <div class="card">
+            <div class="image"> <!--Div para la imagen de la pelicula-->>
+                <a [routerLink]="['/detalles-peliculas-inicio', pelicula.episode_id]">
+                    <img class="card-img-top" 
+                    src="../../../../../assets/images/{{pelicula.episode_id}}.png" 
+                    [alt]="pelicula.title">
+                </a>
+            </div>
+            <div class="card-inner"> <!--Div para la informacion de la pelicula-->
+                <div class="header">
+                    <a [routerLink]="['/detalles-peliculas-inicio', pelicula.episode_id]">
+                        <h2>pelicula.title</h2>
+                    </a>
+                    <h4 class="text-muted">pelicula.director</h4>
+                    <small class="text-muted">pelicula.release_data </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound">
+        <p>Sin resultados</p>
+    </div>
+</div>
+
+<button class="btn btn-dark">
+    Ir arriba
+</button>
