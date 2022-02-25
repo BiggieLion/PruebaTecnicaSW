@@ -3,5 +3,5 @@ export interface PeliculaInicio {
     title: string,
     director: string,
     episode_id: number,
-    release_data: string
+    release_date: string,
 }

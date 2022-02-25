@@ -13,14 +13,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./componentes/paginas/home/home.module').then((m) => m.HomeModule),
   },
-
-  {
-    path: 'listado-peliculas',
-    loadChildren: () =>
-      import(
-        './componentes/paginas/peliculas/listado-peliculas/listado-peliculas.module'
-      ).then((m) => m.ListadoPeliculasModule),
-  },
+  
   {
     path: 'detalles-pelicula/:id',
     loadChildren: () =>

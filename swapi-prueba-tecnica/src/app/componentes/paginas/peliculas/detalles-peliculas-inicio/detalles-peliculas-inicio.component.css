@@ -1,0 +1,13 @@
+a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 350px;
+    max-height: 500px;
+}
+
+a {
+    font-weight: bold;
+}

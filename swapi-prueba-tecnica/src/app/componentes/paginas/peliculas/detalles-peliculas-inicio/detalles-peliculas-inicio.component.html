@@ -1,28 +1,24 @@
 <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let pelicula of peliculasInicio">
-        prueba
-        <div class="card">
-            <div class="image"> <!--Div para la imagen de la pelicula-->>
+    <div class="col-xs-12 col-sm-6 col-md-4 mt-5" *ngFor="let pelicula of peliculasInicio">
+        <div class="card border-warning bg-dark border-4 rounded-3">
+            <div class="image"> <!--Div para la imagen de la pelicula-->
                 <a [routerLink]="['/detalles-peliculas-inicio', pelicula.episode_id]">
-                    <img class="card-img-top" 
-                    src="../../../../../assets/images/{{pelicula.episode_id}}.png" 
+                    <img class="card-img-top img-fluid" 
+                    src="assets/images/{{pelicula.episode_id}}.png" 
                     [alt]="pelicula.title">
                 </a>
             </div>
-            <div class="card-inner"> <!--Div para la informacion de la pelicula-->
+            <div class="card-inner text-center"> <!--Div para la informacion de la pelicula-->
                 <div class="header">
-                    <a [routerLink]="['/detalles-peliculas-inicio', pelicula.episode_id]">
-                        <h2>pelicula.title</h2>
+                    <a class="text-warning" [routerLink]="['/detalles-peliculas-inicio', pelicula.episode_id]">
+                        <h2 class="fw-bold">Star Wars Ep. {{pelicula.episode_id}}: {{pelicula.title}}</h2>
                     </a>
-                    <h4 class="text-muted">pelicula.director</h4>
-                    <small class="text-muted">pelicula.release_data </small>
+                    <h4 class="text-warning fw-light">Director: {{pelicula.director}}</h4>
+                    <small class="text-warning">Lanzamiento: {{pelicula.release_date}}</small>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound">
-        <p>Sin resultados</p>
-    </div>
+    </div>  
 </div>
 
 <button class="btn btn-dark">

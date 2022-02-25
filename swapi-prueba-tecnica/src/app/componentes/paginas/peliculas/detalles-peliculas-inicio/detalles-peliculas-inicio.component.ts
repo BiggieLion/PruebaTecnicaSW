@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculaInicio } from '@app/plantillas/interfaces/peliculainicio.interfaz';
 import { ServicioPeliculaInicioService } from '@app/plantillas/servicios/servicio-pelicula-inicio.service';
-import { take } from 'rxjs';
 
 @Component({
   selector: 'app-detalles-peliculas-inicio',
@@ -18,7 +17,7 @@ export class DetallesPeliculasInicioComponent implements OnInit {
     this.obtenerDatosDesdeServicio();
   }
 
-  private obtenerDatosDesdeServicio() {
+  private obtenerDatosDesdeServicio(): void {
     this.servicioPelicula.obtenerDetallesPeliculaInicio().subscribe(datos => {
       if(datos != null) {
         this.peliculasInicio = datos;
