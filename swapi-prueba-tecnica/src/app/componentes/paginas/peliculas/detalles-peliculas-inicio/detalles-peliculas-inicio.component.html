@@ -1,26 +1,22 @@
-<div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4 mt-5" *ngFor="let pelicula of peliculasInicio">
+<div class="row ">
+    <div class="col-xs-12 col-sm-6 col-md-4 mt-3 mb-4" *ngFor="let pelicula of peliculasInicio">
         <div class="card border-warning bg-dark border-4 rounded-3">
             <div class="image"> <!--Div para la imagen de la pelicula-->
-                <a [routerLink]="['/detalles-peliculas-inicio', pelicula.episode_id]">
-                    <img class="card-img-top img-fluid" 
-                    src="assets/images/{{pelicula.episode_id}}.png" 
-                    [alt]="pelicula.title">
+                <a [routerLink]="['/detalles-pelicula', pelicula.episode_id]">
+                    <img class="card-img-top img-fluid"
+                    src="assets/images/{{pelicula.episode_id}}.png"
+                    alt="">
                 </a>
             </div>
             <div class="card-inner text-center"> <!--Div para la informacion de la pelicula-->
                 <div class="header">
-                    <a class="text-warning" [routerLink]="['/detalles-peliculas-inicio', pelicula.episode_id]">
+                    <a class="text-warning" [routerLink]="['/detalles-pelicula', pelicula.episode_id]">
                         <h2 class="fw-bold">Star Wars Ep. {{pelicula.episode_id}}: {{pelicula.title}}</h2>
                     </a>
                     <h4 class="text-warning fw-light">Director: {{pelicula.director}}</h4>
-                    <small class="text-warning">Lanzamiento: {{pelicula.release_date}}</small>
+                    <small class="text-warning">Lanzamiento: {{pelicula.release_date | date}}</small>
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
 </div>
-
-<button class="btn btn-dark">
-    Ir arriba
-</button>

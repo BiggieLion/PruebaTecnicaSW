@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+/*Estilos aplicados a toda la SAP*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}

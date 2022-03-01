@@ -4,9 +4,10 @@ import { RouterModule } from "@angular/router";
 
 import { DetallesPeliculaComponent } from '@peliculas/detalles-pelicula/detalles-pelicula.component';
 import { DetallesPeliculasInicioComponent } from '@peliculas/detalles-peliculas-inicio/detalles-peliculas-inicio.component';
+import { AcordeonDatosComponent } from './acordeon-datos/acordeon-datos.component';
 
 
-const componentes = [DetallesPeliculaComponent, DetallesPeliculasInicioComponent]
+const componentes = [DetallesPeliculaComponent, DetallesPeliculasInicioComponent, AcordeonDatosComponent]
 
 @NgModule({
   declarations: [...componentes],

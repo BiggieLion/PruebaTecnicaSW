@@ -12,6 +12,7 @@
       "@imagenes/*": ["src/assets/images/*"],
       "@peliculas/*": ["src/app/componentes/paginas/peliculas/*"]
     },
+    "strictPropertyInitialization": false,
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,

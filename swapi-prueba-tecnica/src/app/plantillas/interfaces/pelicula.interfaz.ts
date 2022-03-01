@@ -1,11 +1,11 @@
 /*Interfaz que mostrará los datos de cada pelicula al hacer click*/
 export interface Pelicula {
-    titulo: string,
+    title: string,
     director: string,
-    numEpisodio: number,
-    lanzamiento: string,
-    resumen: string,
-    naves: string[],
-    personajes: string[],
-    planetas: string[]
+    episode_id: number,
+    release_date: string,
+    opening_crawl: string,
+    vehicles: string[],
+    characters: string[],
+    planets: string[],
 }

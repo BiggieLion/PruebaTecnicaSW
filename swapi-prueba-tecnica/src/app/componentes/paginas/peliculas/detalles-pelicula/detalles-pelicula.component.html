@@ -1,1 +1,16 @@
-<p>detalles-pelicula works!</p>
+<div class="row" *ngIf="pelicula$ | async as pelicula">
+    <div class="col align-self-center my-2"> <!--Columna para imprimir la imagen de la pelicula seleccionada-->
+        <img class="img-fluid" src="assets/images/{{pelicula.episode_id}}.png" alt="">
+        <p class="h4 text-warning fw-bold">Star Wars Ep. {{pelicula.episode_id}}: {{pelicula.title}}</p>
+    </div>
+    <div class="col my-3"> <!--Columna para imprimir el resumen de la pelicula-->
+        <p class="h5 text-warning fst-italic fw-bold">"{{pelicula.opening_crawl}}"</p>
+            <p class="h5 text-warning">Director: {{pelicula.director}}</p>
+            <p class="h5 text-warning">Lanzamiento {{pelicula.release_date | date}}</p>
+    </div>
+    <div class="col my-3 align-top-center"> <!--Columna para los elementos acordeon de vehiculos, personajes y planetas-->
+      <app-acordeon-datos></app-acordeon-datos>
+    </div>
+</div>
+
+<button class="btn btn-secondary mb-3" (click)="regresarInicio()"> Regresar</button>

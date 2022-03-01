@@ -7,13 +7,13 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
-  
+
   {
     path: 'home',
     loadChildren: () =>
       import('./componentes/paginas/home/home.module').then((m) => m.HomeModule),
   },
-  
+
   {
     path: 'detalles-pelicula/:id',
     loadChildren: () =>
@@ -22,6 +22,7 @@ const routes: Routes = [
       ).then((m) => m.DetallesPeliculaModule),
   },
   { path: 'detalles-peliculas-inicio', loadChildren: () => import('./componentes/paginas/peliculas/detalles-peliculas-inicio/detalles-peliculas-inicio.module').then(m => m.DetallesPeliculasInicioModule) },
+  { path: 'acordeonDatos', loadChildren: () => import('./componentes/paginas/peliculas/acordeon-datos/acordeon-datos.module').then(m => m.AcordeonDatosModule) },
 ];
 
 @NgModule({

@@ -19,10 +19,9 @@ export class DetallesPeliculasInicioComponent implements OnInit {
 
   private obtenerDatosDesdeServicio(): void {
     this.servicioPelicula.obtenerDetallesPeliculaInicio().subscribe(datos => {
-      if(datos != null) {
+      if(datos != null) { //Se evualua que recibamos las peliculas correctamente
         this.peliculasInicio = datos;
-        console.log("Peliculas: ",this.peliculasInicio);
-      } else {
+      } else { //En caso de que no recibamos peliculas aun mantenemos el array de peliculas como vacio
         this.peliculasInicio = [];
       }
     })

@@ -1,0 +1,36 @@
+.acordeonColumna {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.accordion-button { /*Editando las propiedades de los botones del acordeon*/
+  font-size: x-large;
+  color: white;
+  background: #141514;
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.accordion-item: {
+  border: none;
+}
+
+.accordion-button:not(.collapsed) { /*Editando como se ve el boton cuando no esta colapsado*/
+  color: black;
+  background: white;
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0%) invert(10%);
+}
+
+.accordion-button:focus {
+  box-shadow: inherit;
+}
+@media (max-width: 767px) { /*Calculo de la fuente para diferentes resoluciones*/
+  .accordion-button h2 {
+    font-size: calc(0.95rem + 1.5vw);
+  }
+}

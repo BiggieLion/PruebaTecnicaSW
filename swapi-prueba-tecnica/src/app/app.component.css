@@ -1,3 +1,8 @@
 * {
     font-family: 'Nunito', sans-serif;
 }
+
+.cuerpo {
+  background-color: #141514;
+  scroll-behavior: smooth;
+}
