@@ -1,4 +1,4 @@
-<div class="row" *ngIf="pelicula$ | async as pelicula">
+<div class="row" *ngIf="pelicula">
     <div class="col align-self-center my-2"> <!--Columna para imprimir la imagen de la pelicula seleccionada-->
         <img class="img-fluid" src="assets/images/{{pelicula.episode_id}}.png" alt="">
         <p class="h4 text-warning fw-bold">Star Wars Ep. {{pelicula.episode_id}}: {{pelicula.title}}</p>
@@ -9,7 +9,94 @@
             <p class="h5 text-warning">Lanzamiento {{pelicula.release_date | date}}</p>
     </div>
     <div class="col my-3 align-top-center"> <!--Columna para los elementos acordeon de vehiculos, personajes y planetas-->
-      <app-acordeon-datos></app-acordeon-datos>
+      <div class="container acordeonColumna">
+        <div class="accordion accordion-flush" id="datosAcordeon">
+
+          <!--Seccion de los personajes-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="tituloPersonajes">
+              <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#seccionPersonajes"
+              aria-expanded="true"
+              aria-controls="seccionPersonajes">
+                Personajes
+              </button>
+            </h2>
+
+            <!--Seccion donde se renderiza los datos de los personajes-->
+            <div
+            id="seccionPersonajes"
+            class="accordion-collapse collapse collapsed"
+            aria-labelledby="tituloPersonajes"
+            data-bs-parent="#datosAcordeon">
+              <div class="accordion-body">
+                <ul *ngFor="let character of personajes">
+                  <li>{{character.name}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!--Seccion de los planetas-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="tituloPlanetas">
+              <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#seccionPlanetas"
+              aria-expanded="false"
+              aria-controls="seccionPlanetas">
+                Planetas
+              </button>
+            </h2>
+
+            <!--Seccion donde se renderiza los datos de los planetas-->
+            <div
+            id="seccionPlanetas"
+            class="accordion-collapse collapse collapsed"
+            aria-labelledby="tituloPlanetas"
+            data-bs-parent="#datosAcordeon">
+              <div class="accordion-body">
+                <ul *ngFor="let planet of planetas">
+                  <li>{{planet.name}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!--Seccion de los vehiculos-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="tituloVehiculos">
+              <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#seccionVehiculos"
+              aria-expanded="false"
+              aria-controls="seccionVehiculos">
+                Vehiculos
+              </button>
+            </h2>
+
+            <!--Seccion donde se renderiza los datos de los vehiculos-->
+            <div
+            id="seccionVehiculos"
+            class="accordion-collapse collapse collapsed"
+            aria-labelledby="tituloVehiculos"
+            data-bs-parent="#datosAcordeon">
+              <div class="accordion-body">
+                <ul *ngFor="let vehicle of vehiculos">
+                  <li>{{vehicle.name}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 </div>
 
